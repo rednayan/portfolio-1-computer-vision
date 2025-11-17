@@ -186,7 +186,8 @@ The error analysis pipeline(`vis_and_err_analysis/error_analysis.py`) identifies
 
 ![TP viz](output_run/visualisation_results/TP_20180322_101759_389_R.tif.png)
 ![TP viz](output_run/visualisation_results/TP_20180322_101837_761_R.tif.png)
-![TP viz](output_run/visualisation_results/TP_20180322_102110_279_R.tif.png) 
+![TP viz](output_run/visualisation_results/TP_20180322_102110_279_R.tif.png)
+
 Thiese image represents the model's general performance, where most waterfowl are successfully identified. The model predictions (Red boxes) align well with the ground truth (Green boxes), demonstrating good overall object localization. The high $\text{mAP}@50$ (0.869) seen in the evaluation results is supported by these cases.
 
 
@@ -201,6 +202,7 @@ In this image, the model missed most of the ground truth waterfowl (Green boxes)
 
 ![FP viz](output_run/visualisation_results/FP_20180322_102344_769_R.tif.png)
 ![FP viz](output_run/visualisation_results/FP_20180322_102504_583_R.tif.png)
+
 These image shows multiple instances where the model predicted a waterfowls in an area that contains no ground truth. The area is dominated by high-thermal-signature textured regions.
 
 ## **7. Analysis of Training Dynamics**
