@@ -134,7 +134,7 @@ The training process is as follows:
    * Checkpoints containing the model state, optimizer state, and training history are saved after every epoch.  
    * A separate `_best.pth` checkpoint is maintained, storing the model state that achieved the **highest validation mAP** to date, ensuring the best performing model is always preserved.
 
-## **3. Model Evaluation and Analysis
+## 3. Model Evaluation and Analysis
 
 The trained Faster R-CNN model was evaluated on the Test set (15% of the data) using standard object detection metrics, focusing on **Mean Average Precision** (mAP).
 
