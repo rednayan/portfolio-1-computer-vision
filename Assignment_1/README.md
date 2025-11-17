@@ -138,6 +138,8 @@ The training process is as follows:
 
 The trained Faster R-CNN model was evaluated on the Test set (15% of the data) using standard object detection metrics, focusing on **Mean Average Precision** (mAP).
 
+**Checkpoint Download:** [Best Model Checkpoint](https://cloud.thws.de/s/xzaiM4nAc4daa5m)
+
 ### **3.1. Evaluation Results**
 
 The evaluation was performed using the best model checkpoint saved based on validation mAP.
