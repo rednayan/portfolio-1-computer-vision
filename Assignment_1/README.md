@@ -166,11 +166,11 @@ However, the significant performance drop from $\text{mAP}@50$ to the overall **
 | **Strengths of Thermal Imagery** | **Detection against Camouflage:** Thermal signatures are highly effective for wildlife detection as they isolate the animal's heat signature from the background (water, vegetation), overcoming challenges like camouflage in RGB images.**Night/Low Light Operation:** Thermal cameras operate independently of visible light, enabling continuous monitoring across all times of day and night. |
 | **Weaknesses of Thermal Imagery** | **Lack of Textural Detail:** Thermal images lack the fine texture and visual context of RGB, making species differentiation or individual identification difficult. **Environmental Interference:** Reflections on water, objects heated by the sun, or localized hot spots can generate false positives (False Detections) or interfere with the true thermal signature. |
 
-## **3.4. Visualization and Error Analysis **
+## 3.4. Visualization and Error Analysis
 
 The error analysis pipeline(`vis_and_err_analysis/error_analysis.py`) identifies and samples images representing three key detection outcomes: True Positives (TP), False Negatives (FN), and False Positives (FP).
 
-### **6.1. Methodology**
+### 3.4.1 Methodology
 
   * **Categorization:** Images are categorized based on: $\text{IoU} \ge 0.50$ and $\text{Confidence} \ge 0.75$. 
   * **True Positive (TP) Case:** Images where the number of correctly detected objects (TPs) is $80\%$ or more of the total ground truth count.  
@@ -180,7 +180,7 @@ The error analysis pipeline(`vis_and_err_analysis/error_analysis.py`) identifies
   * **Ground Truth (GT):** Green Bounding Boxes  
   * **Prediction (PRED):** Red Bounding Boxes (confidence score $\ge 0.75$)
 
-### **6.2. Sample Visualizations**
+### 3.4.2 Sample Visualizations
 
 #### **A.True Positives - TP**
 
@@ -205,11 +205,11 @@ In this image, the model missed most of the ground truth waterfowl (Green boxes)
 
 These image shows multiple instances where the model predicted a waterfowls in an area that contains no ground truth. The area is dominated by high-thermal-signature textured regions.
 
-## **7. Analysis of Training Dynamics**
+## **4. Analysis of Training Dynamics**
 
 The script `vis_and_err_analysis/plots.py` analyzes the training process using plots generated from the per-epoch training history, which provides insight into convergence and the effect of the learning rate schedule.
 
-### **7.1. Training Loss and Validation mAP Curves**
+### **4.1. Training Loss and Validation mAP Curves**
 
 The plot below shows the training loss (blue line, left axis) and the validation mAP (red dashed line, right axis) across 20 training epochs.
 
@@ -221,7 +221,7 @@ The plot below shows the training loss (blue line, left axis) and the validation
 * **Validation Performance:** The **Validation mAP** increases rapidly up to epoch 7, reaching its maximum value and then becoming relatively flat for the remaining epochs.  
 * **Optimal Stopping:** The training process effectively reaches convergence around epoch **10** or earlier, where further training yields minimal improvement in validation performance. The model does not appear to suffer from significant overfitting, as the training loss continues a slow decline while validation **mAP** remains stable.
 
-### **7.2. Learning Rate Schedule**
+### **4.2. Learning Rate Schedule**
 
 The learning rate plot confirms the application of the StepLR scheduler, which is designed to help the model escape local minima and stabilize training after initial feature learning.
 
